@@ -24,6 +24,18 @@ class RNKakaoLogin: NSObject {
 
   @objc static func requiresMainQueueSetup() -> Bool { true }
 
+  // MARK: - URL 처리
+
+  @objc(isKakaoTalkLoginUrl:)
+  static func isKakaoTalkLoginUrl(_ url: URL) -> Bool {
+    return AuthApi.isKakaoTalkLoginUrl(url)
+  }
+
+  @objc(handleOpenUrl:)
+  static func handleOpenUrl(_ url: URL) -> Bool {
+    return AuthController.handleOpenUrl(url: url)
+  }
+
   // MARK: - 로그인
 
   @objc(login:rejecter:)
