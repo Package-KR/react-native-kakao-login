@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Package-KR/RNSocialLogin"
+    "url": "git+https://github.com/Package-KR/react-native-kakao-signin"
   },
   "files": [
     "src",
@@ -41,7 +41,7 @@
     "react-native": "*"
   },
   "codegenConfig": {
-    "name": "RNKakaoLoginSpec",
+    "name": "RNKakaoSigninSpec",
     "type": "modules",
     "jsSrcsDir": "src",
     "android": {
