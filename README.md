@@ -34,8 +34,9 @@ npm install @package-kr/react-native-kakao-signin
 
 ## iOS 🍎
 
-1. ### Info.plist 설정 (`ios/{ProjectName}/Info.plist`)
-   - `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.
+### 1. Info.plist 설정
+
+`ios/{ProjectName}/Info.plist`에서 `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.
 
 <details>
 <summary>복사용</summary>
@@ -95,7 +96,7 @@ npm install @package-kr/react-native-kakao-signin
 +	</array>
 ```
 
-2. ### CocoaPods 설치
+### 2. CocoaPods 설치
 
 ```sh
 cd ios && pod install
@@ -103,10 +104,12 @@ cd ios && pod install
 
 ## Android 🤖
 
-1. ### Redirect URI 설정 (`app/src/main/AndroidManifest.xml`)
-   - `AndroidManifest.xml`에 카카오 리다이렉트 액티비티를 추가합니다. `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.<br/><br/>
-     사용자 휴대폰에 카카오 앱이 설치되어 있을 경우 로그인 후 앱으로 돌아오기 위한 설정입니다.<br/>
-     Android 12(API 31) 이상을 타깃하는 경우 `android:exported="true"` 를 반드시 선언해주셔야 합니다.
+### 1. Redirect URI 설정
+
+`app/src/main/AndroidManifest.xml`에 카카오 리다이렉트 액티비티를 추가합니다. `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.
+
+사용자 휴대폰에 카카오 앱이 설치되어 있을 경우 로그인 후 앱으로 돌아오기 위한 설정입니다.
+Android 12(API 31) 이상을 타깃하는 경우 `android:exported="true"` 를 반드시 선언해주셔야 합니다.
 
 ```xml
       <activity
@@ -121,8 +124,9 @@ cd ios && pod install
       </activity>
 ```
 
-2. ### 카카오 앱 키 설정 (`app/src/main/res/values/strings.xml`)
-   - `strings.xml`에 카카오 앱 키를 추가합니다. 카카오 SDK가 앱 키를 자동으로 읽어오기 위한 설정입니다.
+### 2. 카카오 앱 키 설정
+
+`app/src/main/res/values/strings.xml`에 카카오 앱 키를 추가합니다. 카카오 SDK가 앱 키를 자동으로 읽어오기 위한 설정입니다.
 
 ```diff
   <resources>
