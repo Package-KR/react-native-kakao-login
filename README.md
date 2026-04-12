@@ -11,8 +11,11 @@
 
 React Native 전용 카카오 로그인 라이브러리 입니다.
 
-[!WARNING]
-RN Expo와 v0.68 미만 버전은 추후 지원 예정입니다.
+<p align="center">
+  <img src="./docs/images/kakao-console/preview1.png" width="45%" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./docs/images/kakao-console/preview2.png" width="45%" />
+</p>
 
 </div>
 
@@ -20,7 +23,9 @@ RN Expo와 v0.68 미만 버전은 추후 지원 예정입니다.
 
 해당 라이브러리는 React Native `0.68` 이상을 지원합니다.<br/><br/>
 `TurboModule` 기반으로 구현되어 있어 `New Architecture`를 지원하며,<br/>
-`Auto Linking`이 적용되어 있어 별도 네이티브 모듈 연결 작업이 필요 없습니다.
+`Auto Linking`이 적용되어 있어 별도 네이티브 모듈 연결 작업이 필요 없습니다.<br/>
+
+RN Expo와 v0.68 미만은 추후 지원 예정입니다.
 
 ## Prerequisites
 
@@ -32,44 +37,45 @@ RN Expo와 v0.68 미만 버전은 추후 지원 예정입니다.
 npm install @package-kr/react-native-kakao-signin
 ```
 
-## iOS 🍎
+## iOS
 
-1. ### Info.plist 설정 (`ios/{ProjectName}/Info.plist`)
-   - `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.
+### 1. Info.plist 설정
+
+`ios/{ProjectName}/Info.plist`에서 `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.
 
 <details>
 <summary>복사용</summary>
 
 ```xml
-<key>CFBundleURLTypes</key>
-<array>
-	<dict>
-		<key>CFBundleTypeRole</key>
-		<string>Editor</string>
-		<key>CFBundleURLName</key>
-		<string>KAKAO</string>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<string>kakao{KAKAO_APP_KEY}</string>
-		</array>
-	</dict>
-</array>
-<key>CFBundleVersion</key>
-<string>$(CURRENT_PROJECT_VERSION)</string>
-<key>KAKAO_APP_KEY</key>
-<string>{KAKAO_APP_KEY}</string>
-<key>LSApplicationQueriesSchemes</key>
-<array>
-	<string>kakao{KAKAO_APP_KEY}</string>
-	<string>kakaokompassauth</string>
-	<string>kakaotalk</string>
-</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>KAKAO</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao{KAKAO_APP_KEY}</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>{KAKAO_APP_KEY}</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakao{KAKAO_APP_KEY}</string>
+		<string>kakaokompassauth</string>
+		<string>kakaotalk</string>
+	</array>
 ```
 
 </details>
-<br/>
 
 ```diff
+	<!-- Info.plist -->
 	<key>CFBundleURLTypes</key>
 	<array>
 +		<dict>
@@ -95,20 +101,24 @@ npm install @package-kr/react-native-kakao-signin
 +	</array>
 ```
 
-2. ### CocoaPods 설치
+### 2. CocoaPods 설치
 
 ```sh
 cd ios && pod install
 ```
 
-## Android 🤖
+## Android
 
-1. ### Redirect URI 설정 (`app/src/main/AndroidManifest.xml`)
-   - `AndroidManifest.xml`에 카카오 리다이렉트 액티비티를 추가합니다. `{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.<br/><br/>
-     사용자 휴대폰에 카카오 앱이 설치되어 있을 경우 로그인 후 앱으로 돌아오기 위한 설정입니다.<br/>
-     Android 12(API 31) 이상을 타깃하는 경우 `android:exported="true"` 를 반드시 선언해주셔야 합니다.
+### 1. Redirect URI 설정
+
+`app/src/main/AndroidManifest.xml`에 카카오 리다이렉트 액티비티를 추가합니다.<br/>
+`{KAKAO_APP_KEY}` 부분을 카카오 네이티브 앱 키로 교체해주세요.
+
+사용자 휴대폰에 카카오 앱이 설치되어 있을 경우 로그인 후 앱으로 돌아오기 위한 설정입니다.<br/>
+Android 12(API 31) 이상을 타깃하는 경우 `android:exported="true"` 를 반드시 선언해주셔야 합니다.
 
 ```xml
+	  <!-- AndroidManifest.xml -->
       <activity
         android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
         android:exported="true">
@@ -121,8 +131,10 @@ cd ios && pod install
       </activity>
 ```
 
-2. ### 카카오 앱 키 설정 (`app/src/main/res/values/strings.xml`)
-   - `strings.xml`에 카카오 앱 키를 추가합니다. 카카오 SDK가 앱 키를 자동으로 읽어오기 위한 설정입니다.
+### 2. 카카오 앱 키 설정
+
+`app/src/main/res/values/strings.xml`에 카카오 앱 키를 추가합니다.<br/>
+카카오 SDK가 앱 키를 자동으로 읽어오기 위한 설정입니다.
 
 ```diff
   <resources>
