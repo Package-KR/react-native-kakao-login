@@ -11,8 +11,8 @@
 
 React Native 전용 카카오 로그인 라이브러리 입니다.
 
-[!WARNING]
-RN Expo와 v0.68 미만 버전은 추후 지원 예정입니다.
+> [!WARNING]
+> RN Expo와 v0.68 미만은 추후 지원 예정입니다.
 
 </div>
 
