@@ -16,12 +16,10 @@
 5. 생성된 앱을 클릭하면 **앱 설정 대시보드** 페이지로 이동합니다.
 6. `왼쪽 사이드 바 > 앱 > 플랫폼 키`로 이동 후 **네이티브 앱 키**를 확인합니다.
 
-> [!TIP]
+> [!NOTE]
 > 이 키가 [README](../README.md)의 `{KAKAO_APP_KEY}`에 들어갈 값입니다.
 
 ![애플리케이션 추가](images/kakao-console//01-add-app.png)
-
----
 
 ## Android 플랫폼 등록
 
@@ -78,8 +76,6 @@ keytool -exportcert -alias {KEY_ALIAS} -keystore {KEYSTORE_PATH} | PATH_TO_OPENS
 
 ### 3. 저장을 해줍니다.
 
----
-
 ## iOS 플랫폼 등록
 
 ### 1. 번들 ID 확인 및 복사
@@ -91,8 +87,6 @@ Xcode 프로젝트의 `Project/ios > TARGETS > Signing & Capabilities > Bundle I
 ![애플리케이션 추가](images/kakao-console//02-ios-platform.png)
 ![애플리케이션 추가](images/kakao-console//03-ios-platform.png)
 
----
-
 ## 카카오 로그인 활성화
 
 1. 앱 대시보드 좌측 메뉴에서 **제품 설정 > 카카오 로그인**으로 이동합니다.
@@ -102,8 +96,6 @@ Xcode 프로젝트의 `Project/ios > TARGETS > Signing & Capabilities > Bundle I
 
 > [!WARNING]
 > 활성화하지 않으면 로그인 시도 시 오류가 발생합니다.
-
----
 
 ## 동의항목 설정
 
@@ -128,7 +120,5 @@ Xcode 프로젝트의 `Project/ios > TARGETS > Signing & Capabilities > Bundle I
 > [!NOTE]
 > **필수 동의** 항목은 사용자가 거부할 수 없으며, 카카오 검수가 필요합니다.
 > 개발 단계에서는 **선택 동의**로 설정하는 것을 권장합니다.
-
----
 
 설정이 완료되면 [README](../README.md)로 돌아가 네이티브 설정을 이어서 진행하세요.
