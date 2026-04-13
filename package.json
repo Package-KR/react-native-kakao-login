@@ -1,6 +1,6 @@
 {
   "name": "@package-kr/react-native-kakao-signin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React Native Kakao Login",
   "main": "src/index",
   "types": "src/index.ts",
@@ -47,4 +47,5 @@
     "android": {
       "javaPackageName": "com.packagekr.kakao"
     }
-  }}
+  }
+}
